@@ -8,8 +8,15 @@ namespace FinalProjectSalihOzturk.DataAccess
         private List<Person> _persons;
         public PersonDal()
         {
-            _persons = new List<Person>();
+            _persons = new List<Person>
+            {
+                new Person {id = 1, Email = "salabi@salabi.com",Name = "salih",Surname = "ozturk",TelephoneNumber = "124"},
+                new Person {id = 1, Email = "kel@salabi.com",Name = "ahmet",Surname = "ozturk",TelephoneNumber = "142"},
+                new Person {id = 1, Email = "salasdfabi@salabi.com",Name = "ah",Surname = "ozturk",TelephoneNumber = "124"},
+                new Person {id = 1, Email = "asd@salabi.com",Name = "akif",Surname = "ozturk",TelephoneNumber = "3213"},
+                new Person {id = 1, Email = "asdf@salabi.com",Name = "ali",Surname = "ozturk",TelephoneNumber = "123"}
 
+            };
         }
 
         public bool Add(Person person)

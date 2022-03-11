@@ -6,11 +6,30 @@
         xmlns:local="clr-namespace:FinalProjectSalihOzturk"
         mc:Ignorable="d"
         Title="Simple Contact Book" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="57*"/>
-            <ColumnDefinition Width="340*"/>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
+
+        <Label>Names</Label>
+        <TextBox x:Name="txtSearch" Text ="search bar" Margin="0,5,0,5"></TextBox>
+        <ListBox Grid.Row="1" x:Name="lstPersons" SelectionChanged="lstPersons_SelectionChanged" />
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="5,0,0,0">
+            <TextBox x:Name="txtName" Text ="First Name" Margin="0,5,0,0"/>
+            <TextBox x:Name="txtLastName" Text ="Last Name" Margin="0,5,0,0"/>
+            <TextBox x:Name="txtEmail" Text ="E-mail" Margin="0,5,0,0"/>
+            <TextBox x:Name="txtTelNumber" Text ="Telephone Number" Margin="0,5,0,0" />
+            <TextBox x:Name="txtDateOfBirth" Text ="Date Of Birth" Margin="0,5,0,0"/>
+            <Button  x:Name="btnDelete" Margin="0,5,0,0" >Delete Name</Button>
+            <Button  x:Name="btnAdd" Margin="0,5,0,0" Click="ButtonAddName_Click" Content="Add Name"/>
+        </StackPanel>
 
     </Grid>
 </Window>
