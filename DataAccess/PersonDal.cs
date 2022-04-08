@@ -12,9 +12,9 @@ namespace FinalProjectSalihOzturk.DataAccess
             {
                 new Person {id = 1, Email = "salabi@salabi.com",Name = "salih",Surname = "ozturk",TelephoneNumber = "124"},
                 new Person {id = 1, Email = "kel@salabi.com",Name = "ahmet",Surname = "ozturk",TelephoneNumber = "142"},
-                new Person {id = 1, Email = "salasdfabi@salabi.com",Name = "ah",Surname = "ozturk",TelephoneNumber = "124"},
-                new Person {id = 1, Email = "asd@salabi.com",Name = "akif",Surname = "ozturk",TelephoneNumber = "3213"},
-                new Person {id = 1, Email = "asdf@salabi.com",Name = "ali",Surname = "ozturk",TelephoneNumber = "123"}
+                new Person {id = 1, Email = "salasdfabi@salabi.com",Name = "akif",Surname = "kuz",TelephoneNumber = "124"},
+                new Person {id = 1, Email = "asd@salabi.com",Name = "beko",Surname = "philips",TelephoneNumber = "3213"},
+                new Person {id = 1, Email = "asdf@salabi.com",Name = "ali",Surname = "arsl",TelephoneNumber = "123"}
 
             };
         }
