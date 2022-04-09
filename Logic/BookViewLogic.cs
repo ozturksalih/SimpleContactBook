@@ -42,22 +42,20 @@ namespace FinalProjectSalihOzturk.Logic
         {
 
             //fix the plurals to singular
-           /* if (SearchText != null)
+            if (SearchText != null)
             {
                 var searchResult = _dataAccess.GetContacts()
                     .Where(c => c.Name != null && c.Name.ToUpper().StartsWith(SearchText.ToUpper())
-                                || c.Emails.Any(
-                                    email => email != null && email.ToUpper().Contains(SearchText.ToUpper()))
-                                || c.Locations.Any(location =>
-                                    location != null && location.ToUpper().StartsWith(SearchText.ToUpper()))
-                                || c.PhoneNumbers.Any(phone => phone != null && phone.StartsWith(SearchText))
+                                || c.Surname != null && c.Surname.ToUpper().StartsWith(SearchText.ToUpper())
+                                || c.Email!=null && c.Email.ToUpper().Contains(SearchText.ToUpper())
+                                || c.PhoneNumber !=null && c.PhoneNumber.StartsWith(SearchText)
                                 || c.Age != null && c.Age.ToString().Equals(SearchText)
                         //|| c.DateOfBirth != null && c.DateOfBirth.ToString().Contains(SearchText)
                     );
 
-                ContactsView.GetContacts(searchResult);
+                ContactsViewLogic.GetContacts(searchResult);
 
-            }*/
+            }
         }
 
         private void LoadContacts()

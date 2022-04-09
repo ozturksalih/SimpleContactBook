@@ -22,13 +22,17 @@
 
 
         
-        <DataGrid Grid.Column="1" Grid.Row="1" Name="dgPersons"  AutoGenerateColumns="False" >
+        <DataGrid 
+            
+            ItemsSource="{Binding ContactsViewLogic.Contacts}"
+            SelectedItem="{Binding ContactsViewLogic.SelectedContact}"
+            Grid.Column="1" Grid.Row="1"  AutoGenerateColumns="False" >
             <DataGrid.Columns>
 
-                <DataGridTextColumn  Width="*" Header="Name"  />
-                <DataGridTextColumn Width="*" Header="Surname"  />
-                <DataGridTextColumn Width="*" Header="Email"  />
-                <DataGridTextColumn Width="*" Header="Telephone"  />
+                <DataGridTextColumn Binding="{Binding Name}"  Width="*" Header="Name"  />
+                <DataGridTextColumn Binding="{Binding Surname}" Width="*" Header="Surname"  />
+                <DataGridTextColumn Binding="{Binding Email}" Width="*" Header="Email"  />
+                <DataGridTextColumn Binding="{Binding PhoneNumber}" Width="*" Header="Telephone"  />
 
 
 
