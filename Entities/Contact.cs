@@ -6,7 +6,7 @@ namespace FinalProjectSalihOzturk.Entities
 {
     public class Contact :ObservableObject, INotifyPropertyChanged, IEntity
     {
-        public int id { get; set; }
+        
 
         private string _name;
         public string Name

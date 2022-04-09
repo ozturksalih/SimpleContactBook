@@ -4,46 +4,47 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinalProjectSalihOzturk"
+        xmlns:logic="clr-namespace:FinalProjectSalihOzturk.Logic"
         mc:Ignorable="d" FontFamily="Segoe UI Ligth" FontSize="15"
-        Title="Simple Contact Book" Height="450" Width="800">
-    <Grid Margin="10">
+        Title="Contact Book" Height="450" Width="800">
+    <Window.DataContext>
+        <logic:MainView/>
+    </Window.DataContext>
+    <DockPanel>
+        <Grid DockPanel.Dock ="Top" Height="40" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Left">
+                <TextBox Height="25" Width="100"  x:Name="txtSearch" Text ="search bar" Margin="0,5,0,5"></TextBox>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+                <Button  Margin="5" Width="70" Height="25">Search</Button>
+            </StackPanel>
+            
+            <StackPanel Grid.Column="2" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="5" HorizontalAlignment="Center">
+                <Button Margin="3" Width="85">Birthdays</Button>
+                <Button  Command="{Binding BookViewLogic.LoadContactsCommand}" Margin="3" Width="95" >All Contacts</Button>
+            </StackPanel>
+            <StackPanel Grid.Column="5" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="3"  >
+                <Button 
+                    Command="{Binding BookViewLogic.ContactsViewLogic.AddCommand}"
+                    Margin="3" Width="70">Add</Button>
+                <Button Margin="3" Width="70" >Delete</Button>
+                <Button Margin="3" Width="70" >Edit</Button>
+            </StackPanel>
+        </Grid>
+        <Grid DockPanel.Dock="Bottom">
+            <ContentControl Content="{Binding CurrentView}" />
+        </Grid>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10"/>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="10"/>
-        </Grid.ColumnDefinitions>
+    </DockPanel>
 
-        <Label Grid.Column="1">Names</Label>
-        <TextBox Grid.Column ="1"  x:Name="txtSearch" Text ="search bar" Margin="0,5,0,5"></TextBox>
-        <DataGrid Grid.Column ="1" Grid.Row="1" Name="dgPersons"  AutoGenerateColumns="False" SelectionChanged="dgPersons_SelectionChanged" >
-            <DataGrid.Columns>
 
-                <DataGridTextColumn Header="Name" Binding="{Binding Name , Mode=TwoWay}" />
-                <DataGridTextColumn Header="Surname" Binding="{Binding Surname,Mode=TwoWay}" />
-                <DataGridTextColumn Header="Email" Binding="{Binding Email,Mode=TwoWay}" />
-                <DataGridTextColumn Header="Telephone Number" Binding="{Binding TelephoneNumber,Mode=TwoWay}" />
-
-                
-
-            </DataGrid.Columns>
-        </DataGrid>
-        
-        <StackPanel Grid.Column="2" Grid.Row="1"  Margin="5,0,0,0">
-            <TextBox x:Name="txtName" Text ="First Name" Margin="0,5,0,0"/>
-            <TextBox x:Name="txtLastName" Text = "Last Name" Margin="0,5,0,0"/>
-            <TextBox x:Name="txtEmail" Text ="E-mail" Margin="0,5,0,0"/>
-            <TextBox x:Name="txtTelNumber" Text ="Telephone Number" Margin="0,5,0,0" />
-            <TextBox x:Name="txtDateOfBirth" Text ="Date Of Birth" Margin="0,5,0,0"/>
-            <Button  x:Name="btnDelete" Margin="0,5,0,0" Click="btnDelete_Click" >Delete Name</Button>
-            <Button  x:Name="btnAdd" Margin="0,5,0,0" Click="ButtonAddName_Click" Content="Add Name"/>
-        </StackPanel>
-
-    </Grid>
 </Window>
