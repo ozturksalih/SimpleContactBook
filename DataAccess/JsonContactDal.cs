@@ -7,7 +7,7 @@ namespace FinalProjectSalihOzturk.DataAccess
 {
     public class JsonContactDal :IContactDal
     {
-        private readonly string _dataPath = "resource/contactdata.json";
+        private readonly string _dataPath = "resource/Data.json";
 
         public IEnumerable<Contact> GetContacts()
         {

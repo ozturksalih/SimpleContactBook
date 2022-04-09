@@ -5,7 +5,7 @@
              xmlns:local="clr-namespace:FinalProjectSalihOzturk"
              xmlns:views="clr-namespace:FinalProjectSalihOzturk.Views"
              xmlns:vm="clr-namespace:FinalProjectSalihOzturk.Logic"
-             StartupUri="MainWindow.xaml">
+             Startup="Application_Startup">
     
     <Application.Resources>
         <DataTemplate DataType="{x:Type vm:BookViewLogic}">

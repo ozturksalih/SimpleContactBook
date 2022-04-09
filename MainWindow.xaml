@@ -37,7 +37,9 @@
                 <Button 
                     Command="{Binding BookViewLogic.LoadThisWeeksBirthdaysCommand}"
                     Margin="3" Width="85">Birthdays</Button>
-                <Button  Command="{Binding BookViewLogic.LoadContactsCommand}" Margin="3" Width="95" >All Contacts</Button>
+                <Button  
+                    Name="AllContacts"
+                    Command="{Binding BookViewLogic.LoadContactsCommand}" Margin="3" Width="95" >All Contacts</Button>
             </StackPanel>
             <StackPanel Grid.Column="5" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="3"  >
                 <Button 
@@ -46,7 +48,9 @@
                 <Button 
                     Command="{Binding BookViewLogic.ContactsViewLogic.DeleteCommand}"
                     Margin="3" Width="70" >Delete</Button>
-                <Button Margin="3" Width="70" >Edit</Button>
+                <Button 
+                    Command="{Binding BookViewLogic.ContactsViewLogic.EditCommand}"
+                    Margin="3" Width="70" >Edit</Button>
             </StackPanel>
         </Grid>
         <Grid DockPanel.Dock="Bottom">
