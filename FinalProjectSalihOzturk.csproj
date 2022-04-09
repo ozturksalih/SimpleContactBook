@@ -74,7 +74,6 @@
     </Compile>
     <Compile Include="DataAccess\IContactDal.cs" />
     <Compile Include="DataAccess\JsonContactDal.cs" />
-    <Compile Include="DataAccess\MockContactDal.cs" />
     <Compile Include="Entities\Contact.cs" />
     <Compile Include="Entities\IEntity.cs" />
     <Compile Include="Helpers\Converters.cs" />
