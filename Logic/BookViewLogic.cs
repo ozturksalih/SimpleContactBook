@@ -41,16 +41,16 @@ namespace FinalProjectSalihOzturk.Logic
         private void LoadFilteredContacts()
         {
 
-            //fix the plurals to singular
+
             if (SearchText != null)
             {
                 var searchResult = _dataAccess.GetContacts()
                     .Where(c => c.Name != null && c.Name.ToUpper().StartsWith(SearchText.ToUpper())
                                 || c.Surname != null && c.Surname.ToUpper().StartsWith(SearchText.ToUpper())
                                 || c.Email!=null && c.Email.ToUpper().Contains(SearchText.ToUpper())
-                                || c.PhoneNumber !=null && c.PhoneNumber.StartsWith(SearchText)
-                                || c.Age != null && c.Age.ToString().Equals(SearchText)
-                        //|| c.DateOfBirth != null && c.DateOfBirth.ToString().Contains(SearchText)
+                                || c.PhoneNumber !=null && c.PhoneNumber.Contains(SearchText)
+                                || c.Age.ToString().Equals(SearchText)
+                            || c.DateOfBirth != null && c.DateOfBirth.ToString().Contains(SearchText)
                     );
 
                 ContactsViewLogic.GetContacts(searchResult);
