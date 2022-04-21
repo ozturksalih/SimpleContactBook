@@ -41,7 +41,9 @@
                     Name="AllContacts"
                     Command="{Binding BookViewLogic.LoadContactsCommand}" Margin="3" Width="95" >All Contacts</Button>
             </StackPanel>
+
             <StackPanel Grid.Column="4" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Right" Margin="3"  >
+
                 <Button 
                     Command="{Binding BookViewLogic.ContactsViewLogic.AddCommand}"
                     Margin="3" Width="70">Add</Button>

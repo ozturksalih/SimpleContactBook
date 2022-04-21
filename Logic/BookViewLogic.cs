@@ -41,7 +41,7 @@ namespace FinalProjectSalihOzturk.Logic
         private void LoadFilteredContacts()
         {
 
-            
+
             if (SearchText != null)
             {
                 var searchResult = _dataAccess.GetContacts()
