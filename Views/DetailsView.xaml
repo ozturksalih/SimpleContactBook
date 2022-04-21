@@ -138,11 +138,7 @@
                 Stroke="DimGray"
                 StrokeThickness="1"/>
         </Canvas>
-        <Button
-            Width="50" Height="20" Margin="5" HorizontalAlignment="Right"
-            Command="{Binding SaveCommand}"
-            Visibility="{Binding IsEditMode, Converter={StaticResource IsEditConverter}}"
-            Grid.Row="5" Grid.Column="1">Save</Button>
+        
 
     </Grid>
     
