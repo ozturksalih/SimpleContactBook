@@ -7,15 +7,17 @@
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
              d:DesignHeight="420" d:DesignWidth="400">
-
+    
     <Grid Visibility="{Binding SelectedContact, Converter={StaticResource SelectedContactConverter}}" >
+        
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="33"/>
             <RowDefinition Height="33"/>
             <RowDefinition Height="33"/>
             <RowDefinition Height="33"/>
             <RowDefinition Height="35"/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="35"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -25,11 +27,11 @@
 
 
         <!--names of row-->
-        <Label Grid.Row="0" Grid.Column="0"  >Name</Label>
+        <Label Grid.Row="0" Grid.Column="0" Foreground="Black">Name</Label>
         <Label Grid.Row="1" Grid.Column="0">Surname</Label>
-        <Label Grid.Row="2" Grid.Column="0">PhoneNumber</Label>
+        <Label Grid.Row="2" Grid.Column="0">Phone Number</Label>
         <Label Grid.Row="3" Grid.Column="0">Email</Label>
-        <Label Grid.Row="4" Grid.Column="0">DateOfBirth</Label>
+        <Label Grid.Row="4" Grid.Column="0">Date Of Birth</Label>
 
 
         <!--textbox and labels column-->
@@ -86,10 +88,52 @@
             Visibility="{Binding IsEditMode, Converter={StaticResource IsEditConverter}}"
             SelectedDate="{Binding SelectedContact.DateOfBirth}" Margin="5"/>
         <Button 
-            Width="50" Height="20" Margin="5" HorizontalAlignment="Right"
+            Width="50" Height="23" Margin="5" HorizontalAlignment="Right"
             Command="{Binding SaveCommand}"
             Visibility="{Binding IsEditMode, Converter={StaticResource IsEditConverter}}"
             Grid.Row="5" Grid.Column="1">Save</Button>
+        <Canvas>
+            <Line
+                X1="110" Y1="5"
+                X2="110" Y2="165"
+                Stroke="DimGray"
+                StrokeThickness="1"/>
+        </Canvas>
+        <Canvas>
+            <Line
+                X1="5" Y1="33"
+                X2="385" Y2="33"
+                Stroke="DimGray"
+                StrokeThickness="1"/>
+        </Canvas>
+        <Canvas>
+            <Line
+                X1="5" Y1="66"
+                X2="385" Y2="66"
+                Stroke="DimGray"
+                StrokeThickness="1"/>
+        </Canvas>
+        <Canvas>
+            <Line
+                X1="5" Y1="99"
+                X2="385" Y2="99"
+                Stroke="DimGray"
+                StrokeThickness="1"/>
+        </Canvas>
+        <Canvas>
+            <Line
+                X1="5" Y1="132"
+                X2="385" Y2="132"
+                Stroke="DimGray"
+                StrokeThickness="1"/>
+        </Canvas>
+        <Canvas>
+            <Line
+                X1="5" Y1="165"
+                X2="385" Y2="165"
+                Stroke="DimGray"
+                StrokeThickness="1"/>
+        </Canvas>
     </Grid>
     
 </UserControl>
