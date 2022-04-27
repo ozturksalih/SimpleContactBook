@@ -20,6 +20,7 @@ namespace FinalProjectSalihOzturk
                 MessageBox.Show("Now opening file: \n\n" + e.Args[0]);
             wnd.Show();
             wnd.AllContacts.Command.Execute(null);
+            wnd.Birthdays.Command.Execute(null);
         }
     }
 }

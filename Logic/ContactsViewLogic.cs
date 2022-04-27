@@ -18,6 +18,7 @@ namespace FinalProjectSalihOzturk.Logic
 
         private bool _isEditMode;
         public ObservableCollection<Contact> Contacts { get; private set; }
+        public ObservableCollection<Contact> Birthdays { get; private set; }
         public ICommand EditCommand { get; private set; }
         public ICommand SaveCommand { get; private set; }
         public ICommand UpdateCommand { get; private set; }
@@ -39,6 +40,14 @@ namespace FinalProjectSalihOzturk.Logic
         {
             Contacts = new ObservableCollection<Contact>(contacts);
             OnPropertyChanged("Contacts");
+            OnPropertyChanged("Birthdays");
+        }
+
+        public void GetBirthdays(IEnumerable<Contact> contacts)
+        {
+            Birthdays = new ObservableCollection<Contact>(contacts);
+            OnPropertyChanged("Contacts");
+            OnPropertyChanged("Birthdays");
         }
 
         private bool CanDelete()

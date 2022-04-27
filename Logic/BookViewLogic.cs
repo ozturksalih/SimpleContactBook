@@ -29,14 +29,9 @@ namespace FinalProjectSalihOzturk.Logic
             LoadSearchedCommand = new RelayCommand(LoadFilteredContacts);
             LoadThisWeeksBirthdaysCommand = new RelayCommand(LoadThisWeeksBirthdays);
 
-
         }
 
-        private void LoadThisWeeksBirthdays()
-        {
-            var birthdaysInWeek = _dataAccess.GetContacts().Where(c => IsDateInOneWeek(c.DateOfBirth));
-            ContactsViewLogic.GetContacts(birthdaysInWeek);
-        }
+        
 
         private void LoadFilteredContacts()
         {
@@ -61,6 +56,11 @@ namespace FinalProjectSalihOzturk.Logic
         private void LoadContacts()
         {
             ContactsViewLogic.GetContacts(_dataAccess.GetContacts());
+        }
+        private void LoadThisWeeksBirthdays()
+        {
+            var birthdaysInWeek = _dataAccess.GetContacts().Where(c => IsDateInOneWeek(c.DateOfBirth));
+            ContactsViewLogic.GetBirthdays(birthdaysInWeek);
         }
 
         public ContactsViewLogic ContactsViewLogic
